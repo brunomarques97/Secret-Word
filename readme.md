@@ -7,3 +7,5 @@
 -[x]Criar arquivos e limpar o app react padrao 
 <br>
 -[x]Adicinonando componente de palavras
+<br>
+-[x]Ajuste de layout inicial
