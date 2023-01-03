@@ -1,9 +1,10 @@
 import './App.css';
 
+import Tela_inicial from './componentes/Tela_inicial';
 function App() {
   return (
     <div className="App">
-      <h1>Secret Word</h1>
+      <Tela_inicial/>
     </div>
   );
 }
