@@ -13,3 +13,5 @@
 -[x]Melhorando o css do layout inicial 
 <br>
 -[x]Separando em componentes
+<br>
+-[x]Mudando os estagios do jogo
