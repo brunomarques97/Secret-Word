@@ -1,7 +1,10 @@
 import './Fim.css';
 
-export const Fim = () => {
+export const Fim = ({reiniciar}) => {
   return (
-    <div>Fim</div>
+    <div>
+        <h1>Fim</h1>
+        <button onClick={reiniciar}>Reiniciar jogo</button>
+    </div>
   )
 }

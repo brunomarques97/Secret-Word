@@ -4,7 +4,7 @@ import './App.css';
 import {useCallback, useEffect, useState} from "react";
 
 //data
-import {wordslist} from "./data/words";
+import {wordslist} from './data/words';
 
 //componentes
 import Tela_inicial from './componentes/Tela_inicial';
@@ -18,14 +18,27 @@ const estagio =[
 ];
 
 function App() {
+  const[estagiogame, setestagiogame ]= useState(estagio[0].name);
+  const[words] =useState(wordslist);
 
-  const[estagiogame, setestagiogame ]=useState(estagio[0].name);
+  //comeco do jogo
+  const startGame =()=>{
+    setestagiogame(estagio[1].name)
+  };
+  // processo de letras
+  const  verificarLetras=()=>{
+    setestagiogame(estagio[2].name)
+  };
+  //reiniciar o jogo
+  const reiniciar =()=>{
+    setestagiogame(estagio[0].name)
+  };
 
   return (
     <div className="App">
-      {estagiogame === 'começo' && <Tela_inicial/>}
-      {estagiogame === 'jogo' && <Jogo/>}
-      {estagiogame === 'fim' && <Fim/>}
+      {estagiogame === 'começo' && <Tela_inicial startGame={startGame}/>}
+      {estagiogame === 'jogo' && <Jogo verificarLetras={verificarLetras}/>}
+      {estagiogame === 'fim' && <Fim reiniciar={reiniciar}/>}
     </div>
   );
 }
