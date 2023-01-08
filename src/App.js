@@ -21,8 +21,35 @@ function App() {
   const[estagiogame, setestagiogame ]= useState(estagio[0].name);
   const[words] =useState(wordslist);
 
+  const[WordEscolhido, setwordEscolhido ]= useState("");
+  const[categoria, setcategoria ]= useState("");
+  const[letras, setletras ]= useState([]);
+
+  const WordEscolhidoEcategoria=()=>{
+    //escolhe a categoria aleatoria
+    const category=Object.keys(words)
+    const categoria =category[Math.floor(Math.random()* Object.keys(category).length)];
+
+    //escolhe a palavra aleatoria
+    const word =words[categoria][Math.floor(Math.random()*words[categoria].length)];
+
+    return {word,categoria};
+  };
+
   //comeco do jogo
   const startGame =()=>{
+    //escolhe o word e escolhe a categoria
+    const{word,categoria} =WordEscolhidoEcategoria();
+
+    //cria uma array das letras
+    let wordLetras=word.split("");
+
+    wordLetras=wordLetras.map((l)=> l.toLowerCase());
+    // preencher estados
+    setwordEscolhido(word);
+    setcategoria(categoria);
+    setletras(letras);
+
     setestagiogame(estagio[1].name)
   };
   // processo de letras

@@ -15,3 +15,5 @@
 -[x]Separando em componentes
 <br>
 -[x]Mudando os estagios do jogo
+<br>
+-[x]Escolhendo palavras e categorias
