@@ -19,3 +19,17 @@
 -[x]Escolhendo palavras e categorias
 <br>
 -[x]Modificando tela do jogo
+<br>
+-[x]Modificando CSS tela do jogo
+<br>
+-[ ]States do jogo
+<br>
+-[ ]Evento de inserção de letra
+<br>
+-[ ]Verificação de letras validas e invalidas
+<br>
+-[ ]Logica do fim do jogo
+<br>
+-[ ]Mofificando fim do jogo
+<br>
+-[ ]Condiçao de vitoria
