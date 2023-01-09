@@ -25,6 +25,11 @@ function App() {
   const[categoria, setcategoria ]= useState("");
   const[letras, setletras ]= useState([]);
 
+  const[letrasAdivinhadas, setletrasAdivinhadas ]= useState([]);
+  const[letrasErradas, setletrasErradas]= useState([]);
+  const[chances, setchances]= useState(5);
+  const[pontuacao, setpontuacao]= useState(0);
+
   const WordEscolhidoEcategoria=()=>{
     //escolhe a categoria aleatoria
     const category=Object.keys(words)
@@ -48,7 +53,7 @@ function App() {
     // preencher estados
     setwordEscolhido(word);
     setcategoria(categoria);
-    setletras(letras);
+    setletras(wordLetras);
 
     setestagiogame(estagio[1].name)
   };
@@ -64,7 +69,18 @@ function App() {
   return (
     <div className="App">
       {estagiogame === 'começo' && <Tela_inicial startGame={startGame}/>}
-      {estagiogame === 'jogo' && <Jogo verificarLetras={verificarLetras}/>}
+      {estagiogame === 'jogo' && (
+      <Jogo 
+        verificarLetras={verificarLetras}
+        WordEscolhido={WordEscolhido}
+        categoria={categoria}
+        letras={letras}
+        letrasAdivinhadas={letrasAdivinhadas}
+        letrasErradas={letrasErradas}
+        chances={chances}
+        pontuacao={pontuacao}
+        />
+      )}
       {estagiogame === 'fim' && <Fim reiniciar={reiniciar}/>}
     </div>
   );

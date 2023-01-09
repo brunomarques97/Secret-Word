@@ -22,7 +22,7 @@
 <br>
 -[x]Modificando CSS tela do jogo
 <br>
--[ ]States do jogo
+-[x]Consumindo estados do jogo
 <br>
 -[ ]Evento de inserção de letra
 <br>
