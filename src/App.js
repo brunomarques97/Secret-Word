@@ -16,6 +16,8 @@ const estagio =[
   {id:2,name:"jogo"},
   {id:3,name:"fim"},
 ];
+//numero de chances
+const numeroChances=5
 
 function App() {
   const[estagiogame, setestagiogame ]= useState(estagio[0].name);
@@ -27,7 +29,7 @@ function App() {
 
   const[letrasAdivinhadas, setletrasAdivinhadas ]= useState([]);
   const[letrasErradas, setletrasErradas]= useState([]);
-  const[chances, setchances]= useState(5);
+  const[chances, setchances]= useState(numeroChances);
   const[pontuacao, setpontuacao]= useState(0);
 
   const WordEscolhidoEcategoria=()=>{
@@ -71,7 +73,7 @@ function App() {
 
       //empurra a letra adivinhada ou remove o palpite
       if(letras.includes(normalizarletra)){
-        setchances((chancesAtuais)=>[
+        setletrasAdivinhadas((chancesAtuais)=>[
           ...chancesAtuais,
           normalizarletra,
         ]);
@@ -80,11 +82,30 @@ function App() {
           ...errosAtuais,
           normalizarletra,
         ]);
+
+        setchances((chancesAtuais)=>chancesAtuais-1);
       }
   };
+  const limparLetras=()=>{
+    setchances([])
+    setletrasErradas([])
+  }
+
+  useEffect(()=>{
+    if(chances<=0){
+      //Redefinir estagio
+      limparLetras()
+
+      setestagiogame(estagio[2].name);
+    }
+
+},[chances])
 
   //reiniciar o jogo
   const reiniciar =()=>{
+    setpontuacao(0);
+    setchances(numeroChances);
+
     setestagiogame(estagio[0].name)
   };
 

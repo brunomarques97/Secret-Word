@@ -28,7 +28,7 @@
 <br>
 -[x]Verificação de letras validas e invalidas
 <br>
--[ ]Logica do fim do jogo
+-[x]Logica do fim do jogo
 <br>
 -[ ]Mofificando fim do jogo
 <br>
