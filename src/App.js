@@ -59,8 +59,30 @@ function App() {
   };
   // processo de letras
   const  verificarLetras=(letra)=>{
-    console.log(letra);
+    const normalizarletra= letra.toLowerCase()
+
+    //verifique se a letra já foi utilizada
+    if(
+      letrasAdivinhadas.includes(normalizarletra) || 
+      letrasErradas.includes(normalizarletra)
+      ){
+        return;
+      }
+
+      //empurra a letra adivinhada ou remove o palpite
+      if(letras.includes(normalizarletra)){
+        setchances((chancesAtuais)=>[
+          ...chancesAtuais,
+          normalizarletra,
+        ]);
+      }else{
+        setletrasErradas((errosAtuais)=>[
+          ...errosAtuais,
+          normalizarletra,
+        ]);
+      }
   };
+
   //reiniciar o jogo
   const reiniciar =()=>{
     setestagiogame(estagio[0].name)

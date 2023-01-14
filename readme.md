@@ -26,7 +26,7 @@
 <br>
 -[x]Evento de inserção de letra
 <br>
--[ ]Verificação de letras validas e invalidas
+-[x]Verificação de letras validas e invalidas
 <br>
 -[ ]Logica do fim do jogo
 <br>
