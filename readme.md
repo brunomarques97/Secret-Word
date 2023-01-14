@@ -30,6 +30,6 @@
 <br>
 -[x]Logica do fim do jogo
 <br>
--[ ]Mofificando fim do jogo
+-[x]Mofificando fim do jogo
 <br>
 -[ ]Condiçao de vitoria

@@ -124,7 +124,7 @@ function App() {
         pontuacao={pontuacao}
         />
       )}
-      {estagiogame === 'fim' && <Fim reiniciar={reiniciar}/>}
+      {estagiogame === 'fim' && <Fim reiniciar={reiniciar} pontuacao={pontuacao}/>}
     </div>
   );
 }
