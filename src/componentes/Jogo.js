@@ -1,3 +1,4 @@
+import { useState,useRef } from "react";
 import "./Jogo.css";
 
   export const Jogo = ({
@@ -10,6 +11,18 @@ import "./Jogo.css";
     chances,
     pontuacao,
   }) => {
+    const [letra, setletra] =useState("");
+    const letraInput =useRef(null);
+    const receberEnviar=(e)=>{
+      e.preventDefault();
+
+      verificarLetras(letra)
+
+      setletra("");
+
+      letraInput.current.focus();
+    };
+
   return (
     <div className="game">
       <p className="pontos">
@@ -33,8 +46,8 @@ import "./Jogo.css";
       </div>
       <div className="boxLetra">
         <p>Tente adivinhar a letra da palavra:</p>
-        <form>
-          <input type="text" name="letra" maxLength="1" required/>
+        <form onSubmit={receberEnviar}>
+          <input type="text" name="letra" maxLength="1" required onChange={(e)=>setletra(e.target.value)} value={letra} ref={letraInput}/>
           <button>Jogar</button>
         </form>
       </div>

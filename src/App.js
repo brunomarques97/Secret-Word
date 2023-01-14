@@ -58,8 +58,8 @@ function App() {
     setestagiogame(estagio[1].name)
   };
   // processo de letras
-  const  verificarLetras=()=>{
-    setestagiogame(estagio[2].name)
+  const  verificarLetras=(letra)=>{
+    console.log(letra);
   };
   //reiniciar o jogo
   const reiniciar =()=>{

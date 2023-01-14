@@ -24,7 +24,7 @@
 <br>
 -[x]Consumindo estados do jogo
 <br>
--[ ]Evento de inserção de letra
+-[x]Evento de inserção de letra
 <br>
 -[ ]Verificação de letras validas e invalidas
 <br>
