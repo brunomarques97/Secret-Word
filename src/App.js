@@ -7,7 +7,7 @@ import {useCallback, useEffect, useState} from "react";
 import {wordslist} from './data/words';
 
 //componentes
-import Tela_inicial from './componentes/Tela_inicial';
+import Telainicial from './componentes/Tela_inicial';
 import { Jogo } from './componentes/Jogo';
 import { Fim } from './componentes/Fim';
 
@@ -17,7 +17,7 @@ const estagio =[
   {id:3,name:"fim"},
 ];
 //numero de chances
-const numeroChances=5
+const numeroChances=5;
 
 function App() {
   const[estagiogame, setestagiogame ]= useState(estagio[0].name);
@@ -32,7 +32,7 @@ function App() {
   const[chances, setchances]= useState(numeroChances);
   const[pontuacao, setpontuacao]= useState(0);
 
-  const WordEscolhidoEcategoria=()=>{
+  const WordEscolhidoEcategoria=useCallback(()=>{
     //escolhe a categoria aleatoria
     const category=Object.keys(words)
     const categoria =category[Math.floor(Math.random()* Object.keys(category).length)];
@@ -41,10 +41,13 @@ function App() {
     const word =words[categoria][Math.floor(Math.random()*words[categoria].length)];
 
     return {word,categoria};
-  };
+  },[words]);
 
   //comeco do jogo
-  const startGame =()=>{
+  const startGame =useCallback(()=>{
+    //limpa tudo
+    limparLetras();
+
     //escolhe o word e escolhe a categoria
     const{word,categoria} =WordEscolhidoEcategoria();
 
@@ -58,7 +61,7 @@ function App() {
     setletras(wordLetras);
 
     setestagiogame(estagio[1].name)
-  };
+  },[WordEscolhidoEcategoria]);
   // processo de letras
   const  verificarLetras=(letra)=>{
     const normalizarletra= letra.toLowerCase()
@@ -87,10 +90,11 @@ function App() {
       }
   };
   const limparLetras=()=>{
-    setchances([])
+    setchances(numeroChances)
     setletrasErradas([])
   }
 
+  //verifica de as chances terminarao
   useEffect(()=>{
     if(chances<=0){
       //Redefinir estagio
@@ -100,6 +104,19 @@ function App() {
     }
 
 },[chances])
+
+  //verifica se ganhou
+  useEffect(()=>{
+    const letraUnica=[...new Set(letras)];
+    //vitoria
+    if(letrasAdivinhadas.length===letraUnica.length){
+      //adiciona pontuaçao
+      setpontuacao((pontoatual)=>pontoatual+=100);
+      //restart
+      startGame();
+    }
+   
+},[letrasAdivinhadas,letras,startGame]);
 
   //reiniciar o jogo
   const reiniciar =()=>{
@@ -111,7 +128,7 @@ function App() {
 
   return (
     <div className="App">
-      {estagiogame === 'começo' && <Tela_inicial startGame={startGame}/>}
+      {estagiogame === 'começo' && <Telainicial startGame={startGame}/>}
       {estagiogame === 'jogo' && (
       <Jogo 
         verificarLetras={verificarLetras}

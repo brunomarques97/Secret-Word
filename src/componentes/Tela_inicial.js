@@ -1,6 +1,6 @@
 import "./Tela_inicial.css";
 
-const Tela_inicial=({startGame})=>{
+const Telainicial=({startGame})=>{
     return(
         <div classeName="start">
             <h1>Secret Word</h1>
@@ -10,4 +10,4 @@ const Tela_inicial=({startGame})=>{
     )
 };
 
-export default Tela_inicial;
+export default Telainicial;

@@ -32,4 +32,4 @@
 <br>
 -[x]Mofificando fim do jogo
 <br>
--[ ]Condiçao de vitoria
+-[x]Condiçao de vitoria
