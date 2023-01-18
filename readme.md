@@ -1,5 +1,7 @@
 #Secret word
 
+link do jogo:https://palavrasecreta.netlify.app
+
 ##Essa aplicação é um jogo de adivinhações de palavras
 
 ##Tarefas
