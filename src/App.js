@@ -32,6 +32,7 @@ function App() {
   const[chances, setchances]= useState(numeroChances);
   const[pontuacao, setpontuacao]= useState(0);
 
+  //escolhe a palavra
   const WordEscolhidoEcategoria=useCallback(()=>{
     //escolhe a categoria aleatoria
     const category=Object.keys(words)
@@ -46,7 +47,7 @@ function App() {
   //comeco do jogo
   const startGame =useCallback(()=>{
     //limpa tudo
-    limparLetras();
+    limparLetras()
 
     //escolhe o word e escolhe a categoria
     const{word,categoria} =WordEscolhidoEcategoria();
@@ -62,6 +63,7 @@ function App() {
 
     setestagiogame(estagio[1].name)
   },[WordEscolhidoEcategoria]);
+
   // processo de letras
   const  verificarLetras=(letra)=>{
     const normalizarletra= letra.toLowerCase()
@@ -71,7 +73,7 @@ function App() {
       letrasAdivinhadas.includes(normalizarletra) || 
       letrasErradas.includes(normalizarletra)
       ){
-        return;
+        return
       }
 
       //empurra a letra adivinhada ou remove o palpite
@@ -92,6 +94,8 @@ function App() {
   const limparLetras=()=>{
     setchances(numeroChances)
     setletrasErradas([])
+    setletrasAdivinhadas([])
+    
   }
 
   //verifica de as chances terminarao
