@@ -4,9 +4,3 @@
     align-items: center;
     text-align: center;
 }
-@media (max-width: 480px) {
-    .App{
-        writing-mode: vertical-rl;
-        font-size: 10px;
-    }
-}
