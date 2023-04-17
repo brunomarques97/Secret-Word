@@ -1,6 +1,19 @@
-#Secret word
+# Secret word
+Projeto palavra secreta é um jogo de adivinhar palavras do curso de react.
 
-##Lista de tarefas
+# Link para o site
+"https://palavrasecreta.netlify.app/"
+
+### Propriedades
+
+- html
+- css
+- javascript
+- framework react
+- utilizaçao de componentes
+- flexbox 
+
+## Lista de tarefas
 <br>
 -[x]Criar arquivos e limpar o app react padrao 
 <br>
@@ -31,3 +44,7 @@
 -[x]Mofificando fim do jogo
 <br>
 -[x]Condiçao de vitoria
+
+## Autor
+
+- LinkedIn - [Bruno Marques](https://www.linkedin.com/in/bruno-c-marques/)
