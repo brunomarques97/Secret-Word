@@ -6,7 +6,7 @@
 }
 @media (max-width: 480px) {
     .App{
-        writing-mode: horizontal-tb;
+        writing-mode: vertical-lr;
         font-size: 10px;
     }
 }
