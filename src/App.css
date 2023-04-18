@@ -4,3 +4,10 @@
     align-items: center;
     text-align: center;
 }
+@media (max-width: 480px) {
+    .App{
+        font-size: 10px;
+        margin: auto 2em;
+       justify-content: space-between;
+    }
+}

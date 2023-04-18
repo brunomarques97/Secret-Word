@@ -12,6 +12,7 @@
     padding: 1.5em;
     border: 20px solid blue;
     display: flex;
+    justify-content: center;
 }
 .letra,.quadrobranco{
     font-size: 70px;
@@ -38,4 +39,20 @@
     font-size: 2em;
     text-align: center;
     margin-right: 1em;
+}
+@media (max-width: 480px) {
+    .letra,.quadrobranco{
+        font-size: 30px;
+        height: 40px;
+        width: 40px;
+    }
+    .boxLetra input{
+        height: 30px;
+        width: 30px;
+    }
+    .conteiner{
+        margin: 1px;
+        padding: 6px;
+        border: 10px solid blue;
+    }
 }
