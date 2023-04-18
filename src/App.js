@@ -20,7 +20,7 @@ const estagio =[
 const numeroChances=5;
 
 function App() {
-  const[estagiogame, setestagiogame ]= useState(estagio[0].name);
+  const[estagiogame, setestagiogame ] = useState(estagio[0].name);
   const[words] =useState(wordslist);
 
   const[WordEscolhido, setwordEscolhido ]= useState("");
@@ -33,19 +33,29 @@ function App() {
   const[pontuacao, setpontuacao]= useState(0);
 
   //escolhe a palavra
-  const WordEscolhidoEcategoria=useCallback(()=>{
+  const WordEscolhidoEcategoria = useCallback(()=>{
     //escolhe a categoria aleatoria
     const category=Object.keys(words)
     const categoria =category[Math.floor(Math.random()* Object.keys(category).length)];
 
     //escolhe a palavra aleatoria
-    const word =words[categoria][Math.floor(Math.random()*words[categoria].length)];
+    const word = words[categoria][Math.floor(Math.random()*words[categoria].length)];
 
     return {word,categoria};
   },[words]);
 
+  //inicia jogo
+    const jogar=()=>{
+      setestagiogame(estagio[1].name)
+      const{word,categoria} =WordEscolhidoEcategoria();
+
+      setwordEscolhido(word);
+      setcategoria(categoria);
+
+    }
+
   //comeco do jogo
-  const startGame =useCallback(()=>{
+  const startGame = useCallback(()=>{
     //limpa tudo
     limparLetras()
 
@@ -61,7 +71,6 @@ function App() {
     setcategoria(categoria);
     setletras(wordLetras);
 
-    setestagiogame(estagio[1].name)
   },[WordEscolhidoEcategoria]);
 
   // processo de letras
@@ -95,7 +104,6 @@ function App() {
     setchances(numeroChances)
     setletrasErradas([])
     setletrasAdivinhadas([])
-    
   }
 
   //verifica de as chances terminarao
@@ -128,11 +136,12 @@ function App() {
     setchances(numeroChances);
 
     setestagiogame(estagio[0].name)
+
   };
 
   return (
     <div className="App">
-      {estagiogame === 'começo' && <Telainicial startGame={startGame}/>}
+      {estagiogame === 'começo' && <Telainicial jogar={jogar}/>}
       {estagiogame === 'jogo' && (
       <Jogo 
         verificarLetras={verificarLetras}
