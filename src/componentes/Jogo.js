@@ -11,9 +11,6 @@ import "./Jogo.css";
     chances,
     pontuacao,
   }) => {
-
-    console.log("")
-
     const [letra, setletra] =useState("");
     const letraInput =useRef(null);
     const receberEnviar=(e)=>{
