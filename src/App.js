@@ -44,21 +44,10 @@ function App() {
     return {word,categoria};
   },[words]);
 
-  //inicia jogo
-    const jogar=()=>{
-      setestagiogame(estagio[1].name)
-      const{word,categoria} =WordEscolhidoEcategoria();
-
-      setwordEscolhido(word);
-      setcategoria(categoria);
-      
-      console.log(categoria)
-      console.log(word)
-      
-    }
-
   //comeco do jogo
   const startGame = useCallback(()=>{
+    setestagiogame(estagio[1].name)
+
     //limpa tudo
     limparLetras()
 
@@ -144,7 +133,7 @@ function App() {
 
   return (
     <div className="App">
-      {estagiogame === 'começo' && <Telainicial jogar={jogar}/>}
+      {estagiogame === 'começo' && <Telainicial startGame={startGame}/>}
       {estagiogame === 'jogo' && (
       <Jogo 
         verificarLetras={verificarLetras}
