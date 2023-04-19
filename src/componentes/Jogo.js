@@ -12,6 +12,8 @@ import "./Jogo.css";
     pontuacao,
   }) => {
 
+    
+
     const [letra, setletra] =useState("");
     const letraInput =useRef(null);
     const receberEnviar=(e)=>{
