@@ -12,7 +12,7 @@ import "./Jogo.css";
     pontuacao,
   }) => {
 
-    
+    console.log("")
 
     const [letra, setletra] =useState("");
     const letraInput =useRef(null);
