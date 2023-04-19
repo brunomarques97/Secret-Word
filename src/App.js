@@ -44,12 +44,6 @@ function App() {
     return {word,categoria};
   },[words]);
 
-  //inicia jogo
-    const jogar=()=>{
-      setestagiogame(estagio[1].name)
-            
-    }
-
   //comeco do jogo
   const startGame = useCallback(()=>{
     
@@ -69,6 +63,12 @@ function App() {
     setletras(wordLetras);
 
   },[WordEscolhidoEcategoria]);
+   
+  //inicia jogo
+   const jogar=()=>{
+    setestagiogame(estagio[1].name)
+    startGame()    
+  }
 
   // processo de letras
   const  verificarLetras=(letra)=>{
@@ -107,8 +107,7 @@ function App() {
   useEffect(()=>{
     if(chances<=0){
       //Redefinir estagio
-      limparLetras()
-      startGame()
+      limparLetras();
 
       setestagiogame(estagio[2].name);
     }
