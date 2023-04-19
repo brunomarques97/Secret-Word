@@ -47,9 +47,7 @@ function App() {
   //inicia jogo
     const jogar=()=>{
       setestagiogame(estagio[1].name)
-      
-      startGame()
-      
+            
     }
 
   //comeco do jogo
@@ -111,6 +109,7 @@ function App() {
     if(chances<=0){
       //Redefinir estagio
       limparLetras()
+      startGame()
 
       setestagiogame(estagio[2].name);
     }
