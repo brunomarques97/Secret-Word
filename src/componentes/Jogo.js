@@ -12,10 +12,6 @@ import "./Jogo.css";
     pontuacao,
   }) => {
 
-    console.log(categoria)
-    console.log(WordEscolhido)
-    console.log(letras)
-
     const [letra, setletra] =useState("");
     const letraInput =useRef(null);
     const receberEnviar=(e)=>{
