@@ -54,14 +54,16 @@ function App() {
     //escolhe o word e escolhe a categoria
     const{word,categoria} =WordEscolhidoEcategoria();
 
-    //cria uma array das letras
-    let wordLetras=word.split("");
-
-    wordLetras=wordLetras.map((l)=> l.toLowerCase());
     // preencher estados
     setwordEscolhido(word);
     setcategoria(categoria);
-    setletras(wordLetras);
+    
+
+     //cria uma array das letras
+     let wordLetras= word.split("");
+     wordLetras=wordLetras.map((l)=> l.toLowerCase());
+
+     setletras(wordLetras);
 
   },[WordEscolhidoEcategoria]);
 
