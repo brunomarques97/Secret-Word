@@ -53,7 +53,6 @@ function App() {
   //comeco do jogo
   const startGame = useCallback(()=>{
     
-
     //limpa tudo
     limparLetras()
 
