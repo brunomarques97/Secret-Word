@@ -44,9 +44,17 @@ function App() {
     return {word,categoria};
   },[words]);
 
+  //inicia jogo
+    const jogar=()=>{
+      setestagiogame(estagio[1].name)
+      
+      startGame()
+      
+    }
+
   //comeco do jogo
   const startGame = useCallback(()=>{
-    setestagiogame(estagio[1].name)
+    
 
     //limpa tudo
     limparLetras()
@@ -54,16 +62,14 @@ function App() {
     //escolhe o word e escolhe a categoria
     const{word,categoria} =WordEscolhidoEcategoria();
 
+    //cria uma array das letras
+    let wordLetras=word.split("");
+
+    wordLetras=wordLetras.map((l)=> l.toLowerCase());
     // preencher estados
     setwordEscolhido(word);
     setcategoria(categoria);
-    
-
-     //cria uma array das letras
-     let wordLetras= word.split("");
-     wordLetras=wordLetras.map((l)=> l.toLowerCase());
-
-     setletras(wordLetras);
+    setletras(wordLetras);
 
   },[WordEscolhidoEcategoria]);
 
@@ -135,7 +141,7 @@ function App() {
 
   return (
     <div className="App">
-      {estagiogame === 'começo' && <Telainicial startGame={startGame}/>}
+      {estagiogame === 'começo' && <Telainicial jogar={jogar}/>}
       {estagiogame === 'jogo' && (
       <Jogo 
         verificarLetras={verificarLetras}
