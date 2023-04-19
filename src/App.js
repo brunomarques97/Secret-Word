@@ -51,7 +51,8 @@ function App() {
 
       setwordEscolhido(word);
       setcategoria(categoria);
-
+      console.log(word)
+      console.log(categoria)
     }
 
   //comeco do jogo
