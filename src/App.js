@@ -49,6 +49,7 @@ function App() {
     
     //limpa tudo
     limparLetras()
+    setpontuacao(0);
 
     //escolhe o word e escolhe a categoria
     const{word,categoria} =WordEscolhidoEcategoria();
@@ -101,7 +102,6 @@ function App() {
     setchances(numeroChances)
     setletrasErradas([])
     setletrasAdivinhadas([])
-    setpontuacao(0)
   }
 
   //verifica de as chances terminarao
@@ -133,7 +133,7 @@ function App() {
     setpontuacao(0);
     setchances(numeroChances);
 
-    setestagiogame(estagio[0].name)
+    setestagiogame(estagio[1].name)
 
   };
 
