@@ -101,6 +101,7 @@ function App() {
     setchances(numeroChances)
     setletrasErradas([])
     setletrasAdivinhadas([])
+    setpontuacao(0)
   }
 
   //verifica de as chances terminarao
