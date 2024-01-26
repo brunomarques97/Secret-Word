@@ -49,7 +49,6 @@ function App() {
     
     //limpa tudo
     limparLetras()
-    setpontuacao(0);
 
     //escolhe o word e escolhe a categoria
     const{word,categoria} =WordEscolhidoEcategoria();
@@ -68,6 +67,7 @@ function App() {
   //inicia jogo
    const jogar=()=>{
     setestagiogame(estagio[1].name)
+    setpontuacao(0);
     startGame()    
   }
 
