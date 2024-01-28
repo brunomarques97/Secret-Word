@@ -12,6 +12,7 @@ import "./Jogo.css";
     pontuacao,
   }) => {
 
+
     const [letra, setletra] =useState("");
     const letraInput =useRef(null);
     const receberEnviar=(e)=>{
@@ -31,7 +32,7 @@ import "./Jogo.css";
       </p>
       <h1>Adivinhe a palavra:</h1>
       <h3 className="tipo">
-        Dica sobre a palavra:<span>{categoria}.</span>
+        Dica sobre a palavra: <span>{categoria}</span>
       </h3>
       <p>Você ainda tem {chances} tentativas</p>
       <div className="conteiner">

@@ -40,9 +40,10 @@ function App() {
 
     //escolhe a palavra aleatoria
     const word = words[categoria][Math.floor(Math.random()*words[categoria].length)];
-
+   
     return {word,categoria};
   },[words]);
+
 
   //comeco do jogo
   const startGame = useCallback(()=>{
@@ -51,10 +52,11 @@ function App() {
     limparLetras()
 
     //escolhe o word e escolhe a categoria
-    const{word,categoria} =WordEscolhidoEcategoria();
+    const{word,categoria} = WordEscolhidoEcategoria();
 
     //cria uma array das letras
-    let wordLetras=word.split("");
+    let wordLetras = word.split("");
+
 
     wordLetras=wordLetras.map((l)=> l.toLowerCase());
     // preencher estados
@@ -66,8 +68,8 @@ function App() {
    
   //inicia jogo
    const jogar=()=>{
+    setpontuacao(0)
     setestagiogame(estagio[1].name)
-    setpontuacao(0);
     startGame()    
   }
 
@@ -109,7 +111,6 @@ function App() {
     if(chances<=0){
       //Redefinir estagio
       limparLetras();
-
       setestagiogame(estagio[2].name);
     }
 
@@ -136,6 +137,7 @@ function App() {
     setestagiogame(estagio[1].name)
 
   };
+
 
   return (
     <div className="App">
